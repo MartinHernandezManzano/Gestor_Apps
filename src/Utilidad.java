@@ -1,4 +1,4 @@
-public class Utilidad extends Aplicacion{
+public class Utilidad extends Aplicacion {
     //añadimos el atributo categoria
     protected String categoria;
 
@@ -23,6 +23,6 @@ public class Utilidad extends Aplicacion{
 
     @Override
     public String devolverInfoString() {
-        return super.devolverInfoString() +  "\ncategoria: " + categoria;
+        return super.devolverInfoString() + "\ncategoria: " + categoria;
     }
 }

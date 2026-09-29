@@ -1,7 +1,7 @@
-public abstract class Aplicacion implements Imprimible{
+public abstract class Aplicacion implements Imprimible, Comparable<Aplicacion>, Actualizable {
     /*
     la clase abstracta aplicación q implementa
-    la interfaz imprimible
+    la interfaz imprimible, comparable y actualizable
      */
 
     //atributos
@@ -45,5 +45,21 @@ public abstract class Aplicacion implements Imprimible{
     @Override
     public String devolverInfoString() {
         return "Nombre: " + nombre + "\nVersion: " + version + "\nPeso MB: " + pesoMB;
+    }
+
+    /*
+    EXTRA: compara el nombre ignorando mayusculas para ordenar alfabeticamente
+     */
+    @Override
+    public int compareTo(Aplicacion otra) {
+        return this.nombre.compareToIgnoreCase(otra.getNombre());
+    }
+
+    /*
+    EXTRA: actualiza el peso en MB de la aplicacion
+     */
+    @Override
+    public void actualizar(double nuevoPeso) {
+        this.pesoMB = nuevoPeso;
     }
 }
